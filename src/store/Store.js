@@ -1,13 +1,16 @@
-import { observable } from 'mobx'
+import { observable,  } from 'mobx'
 
-class AppStore {
-    @observable countries = [];
-    @observable currencies = [];
-    @observable currentCountry ;
-    @observable currentCurrency;
-}
+export const store = window.store = observable({
+    countries : [],
+    currencies : [],
+    currentCountry: null,
+    currentCurrency: null
+});
 
-const store = window.store = new AppStore;
 
-export default store;
+
+
+
+
+
 
