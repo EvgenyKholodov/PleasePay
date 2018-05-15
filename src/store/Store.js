@@ -1,14 +1,13 @@
-import { observable } from 'modx'
+import { observable } from 'mobx'
 
-class Store {
+class AppStore {
     @observable countries = [];
     @observable currencies = [];
+    @observable currentCountry ;
+    @observable currentCurrency;
 }
-const store = window.store = new Store;
+
+const store = window.store = new AppStore;
 
 export default store;
 
-autorun(() => {
-
-    console.log(store.countries)
-})

@@ -6,12 +6,14 @@ import './field.css'
 export class Field extends Component {
     render() {
         const { type, name, value, onChange, options  } = this.props;
+        const currentValue = value.value ? value : '';
+
         return (
             <div className="field">
                 <p>{ type }</p>
                 <Select
                     name={ name }
-                    value={ value }
+                    value={ currentValue }
                     onChange={ onChange }
                     options={ options }
                 />
